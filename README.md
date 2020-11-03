@@ -12,6 +12,12 @@
 <li>getState</li>
 <li>dispatch</li>
 <li>subscribe</li>
+
+
+# Connecting React and Redux
+
+* Provider from react-redux
+
       
 
 
