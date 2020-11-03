@@ -24,8 +24,7 @@ const SinglePost = (prop) => {
           <Card.Body>
             <Card.Title>{post.title} {post.id}</Card.Title>
               <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              {post.description}
               </Card.Text>
               <Button variant="primary" className="w-100">Go somewhere</Button>
           </Card.Body>

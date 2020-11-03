@@ -23,13 +23,14 @@ constructor(props){
 }
 
   onFormSubmit = (e) => {
-  
-      console.log('We got it', this.props);
-      // event.reset();
-  
       e.preventDefault();
-
         this.props.addPost({title : this.state.title,  description: this.state.description});
+
+        this.setState({
+          title: '',
+          description: ''
+        });
+        
 
   }
 
@@ -59,11 +60,7 @@ constructor(props){
                 </Form>
                   </div>
                 </div>
-
-      
               </div>
-
-
             </React.Fragment>
         )
     }
@@ -71,6 +68,6 @@ constructor(props){
 
 
 
-const AddPost = connect(mapDispatchToProp)(CAddPost);
+const AddPost = connect(null, mapDispatchToProp)(CAddPost);
 
 export default AddPost;
