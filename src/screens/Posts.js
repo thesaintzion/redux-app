@@ -5,7 +5,7 @@ import img3 from '../assets/img/financial2.jpg';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
-import Modal from 'react-bootstrap/Modal';
+// import Modal from 'react-bootstrap/Modal';
 
 
 // Map the redux state to the prop of a component
@@ -16,7 +16,7 @@ const mapStateToProp = state => {
 
 const SinglePost = (prop) => {
     console.log('The Post Length', prop.posts.length)
-   return ( prop.posts.length < 1 ? <p className="text-white">No found</p> : 
+   return ( prop.posts.length < 1 ? <p className="text-white text-center w-100 ">No found</p> : 
    prop.posts.map(post => (
     <div key={post.id} className="col-lg-4">
       <Card className="shadow border-0">
@@ -36,10 +36,13 @@ const SinglePost = (prop) => {
 }
 
  class CPosts extends Component {
+    constructor(props) {
+        super(props);
      
-     state = {
+     this.state = {
          showModal: false,
-     }
+        }
+    }
      handleClose = () =>{
         this.setState ({
             showModal: false
@@ -56,11 +59,13 @@ const SinglePost = (prop) => {
         // this.store.dispatch( addPost({title: 'POST Ladele 4', id: 4}));
     }
 
+
+
+
     render() {
         console.log('The props', this.props)
         return (
             <>
-  
             <div className="posts py-5 bg-dark">
                 <div className="container">
                 <h1 className="text-white text-center mb-4">POST</h1>
@@ -69,8 +74,7 @@ const SinglePost = (prop) => {
                 </div>
                 </div>
             </div>
-
-</>
+    </>
         );
 
        
