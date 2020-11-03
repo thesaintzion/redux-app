@@ -1,11 +1,9 @@
-import React from 'react'
-
 const initialState = {
     posts: []
 }
 
  function rootReducer(state = initialState, action) {
-    return state
+    return state;
 }
 
 export default rootReducer;
