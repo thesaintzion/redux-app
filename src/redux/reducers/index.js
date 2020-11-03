@@ -6,7 +6,9 @@ const initialState = {
 
  function rootReducer(state = initialState, action) {
      if(action.type === ADD_POST){
-         state.posts.push(action.payload);
+        return Object.assign({}, state, {
+            posts: state.articles.concat(action.payload)
+          });
      }
     return state;
 }
