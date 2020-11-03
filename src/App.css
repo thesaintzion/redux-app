@@ -51,6 +51,10 @@
   }
 }
 
+*{
+  -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+filter: grayscale(50%);
+}
 
 
 
@@ -67,24 +71,40 @@ height: 100vh !important;
 overflow: hidden !important;
 }
 
-img{
+.carousel-item .img{
 vertical-align: middle;
 border-style: none;
 o-object-fit: cover;
 object-fit: cover;
 width: 100%;
 height: 100%;
+
 }
 
-.welcome h1{
+.welcome .h1{
   font-weight: 800;
   padding: 60px;
   font-size: 70px;
 }
 
-.welcome h1 span{
+.welcome .h1 span{
   text-decoration: underline;
+  
+}
+
+.text-info-light{
   color: #61dafb;
+}
+/* 
+.card{
+  border-radius: 15px !important;
+} */
+
+
+
+/* Post */
+.posts{
+  min-height: 300px;
 }
 
 

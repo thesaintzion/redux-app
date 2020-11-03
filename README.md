@@ -2,7 +2,17 @@
 * Store
    Store brings all reducers together
 * Reducer 
-   Reducer holds the states of an app and it's function that takes (initial state and ) 
+   Reducer holds the states of an app and it's function that takes (initial state and) 
+* Action
+    Action takes type and payload, the payload is the new state you want to update..
+
+
+
+<H1>The 3 main stuff</H1>
+<li>getState</li>
+<li>dispatch</li>
+<li>subscribe</li>
+      
 
 
 The two key points for avoiding mutations in Redux:

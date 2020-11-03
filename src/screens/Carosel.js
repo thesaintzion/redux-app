@@ -13,44 +13,38 @@ class Carosel extends Component {
             <React.Fragment>
                 <div className="d-flex">
                 <div className="w-50  h-100  welcome">
-                    <h1>WELCOME <br />  HOME <br /> <span className="text-dange text-bold text-underline">Saint</span></h1>
-                    <img src={logo} className="App-logo w-50" alt="your head"/>
+                    <h1 className="h1">WELCOME <br />  HOME <br /> <span className="text-bold text-info-light text-underline">SAINT</span></h1>
+                    <img  src={logo} className="App-logo w-50" alt="your head"/>
                 </div>
               
         <Carousel className="w-50 carosel-con shadow">
   <Carousel.Item>
     <img
+    className="img"
       src={img1}
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
   </Carousel.Item>
 
   <Carousel.Item>
     <img
+    className="img"
        src={img2}
       alt="Third slide"
     />
 
-    <Carousel.Caption>
+    {/* <Carousel.Caption>
       <h3>Second slide label</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
+    </Carousel.Caption> */}
   </Carousel.Item>
 
   <Carousel.Item>
     <img
+    className="img"
       src={img3}
       alt="Third slide"
     />
-
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
 </div>
