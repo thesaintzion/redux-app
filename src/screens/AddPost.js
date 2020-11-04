@@ -13,25 +13,27 @@ function mapDispatchToProp(dispatch){
 
 class CAddPost extends Component {
 
-constructor(props){
-  super(props);
 
-  this.state = {
+  state = {
     title: '',
     description: '',
   }
-}
+
 
   onFormSubmit = (e) => {
-      e.preventDefault();
+      if(this.state.title.toString().trim() === ''){
+        alert('Please fil in title');
+      }else if(this.state.description.toString().trim() === ''){
+        alert('Please fil in description');
+      }else{
         this.props.addPost({title : this.state.title,  description: this.state.description});
-
         this.setState({
           title: '',
           description: ''
-        });
-        
+        }); 
+      }
 
+      e.preventDefault();
   }
 
   onInputChange = (e) => {
@@ -51,7 +53,6 @@ constructor(props){
                 
                   <Form.Control type="text" id="title" value={this.state.title} onChange={this.onInputChange} placeholder="Title" />
 
-           
                   <Form.Control type="text" id="description" value={this.state.description} onChange={this.onInputChange} placeholder="Description" />
               
                 <Button variant="primary" type="submit" className="w-100 mt-3">

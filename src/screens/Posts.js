@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-// import img1 from '../assets/img/consult.jpg';
-// import img2 from '../assets/img/bonus.jpg';
 import img3 from '../assets/img/financial2.jpg';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
-// import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
 
-
-// Map the redux state to the prop of a component
-
-const mapStateToProp = state => {
+const mapStateToProp = (state) => {
     return { posts: state.posts };
 }
 
 const SinglePost = (prop) => {
-    console.log('The Post Length', prop.posts.length)
-   return ( prop.posts.length < 1 ? <p className="text-white text-center w-100 ">No found</p> : 
+   return ( prop.posts.length < 1 ? <p className="text-white text-center w-100 "> &#x26A0; No found</p> : 
    prop.posts.map(post => (
     <div key={post.id} className="col-lg-4">
       <Card className="shadow border-0">
@@ -69,8 +63,14 @@ const SinglePost = (prop) => {
                 <div className="container">
                 <h1 className="text-white text-center mb-4">POST</h1>
                 <div className="row">
-                        <SinglePost posts={this.props.posts} />
+                    <SinglePost posts={this.props.posts} />
                 </div>
+                { this.props.posts.length > 0 ? 
+                <div className="text-center mt-3">
+                <Link className="text-white" to="/more"><Button  variant="primary" className="w-100 ">Go to more  </Button></Link>
+                </div>
+                : null}
+               
                 </div>
             </div>
     </>
