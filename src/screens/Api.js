@@ -11,21 +11,24 @@ const mapStateToProp = (state) => {
     return { apiPosts: state.apiPosts.slice (0, 9), apiError: state.error };
 }
 
+
 export class Api extends Component {
     goBack = () => {
       window.history.back()
     }
 
-    componentDidMount = () =>{
-        this.props.getApiPosts();
+    componentDidMount = () => {
+        this.props.getApiPosts('https://jsonplaceholder.typicode.com/posts');
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-
-    componentDidCatch = () => {
         this.props.apiError();
         console.log('Check error', this.props)
     }
+
+    // componentDidCatch = () => {
+    //     this.props.apiError();
+    //     console.log('Check error', this.props)
+    // }
 
     render() {
         return (

@@ -8,16 +8,17 @@ export default function* watcherSaga() {
 
 function* workerSaga(){
   try {
-    const payload = yield call(getData);
+    const payload = yield call(getData, action.payload.url);
     yield put({ type: GET_POSTS, payload });
 
   } catch (e) {
+    console.log('Error here in SAGA', e);
     yield put({ type: API_ERROR, payload: e });
   }
 }
 
-function getData() {
-    return fetch("https://jsonplaceholder.typicode.com/posts").then(response =>
+function getData(url) {
+    return fetch(url).then(response =>
       response.json()
     );
   }

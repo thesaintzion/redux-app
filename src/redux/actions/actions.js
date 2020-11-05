@@ -18,8 +18,8 @@ export function addPost(payload) {
 // }
 
 
-export function getApiPosts() {
-    return { type: API_REQUEST}
+export function getApiPosts(url) {
+    return { type: API_REQUEST, payload: url}
 }
 
 export function apiError() {
