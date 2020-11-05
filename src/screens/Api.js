@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import img3 from '../assets/img/financial2.jpg';
+import img4 from '../assets/img/consult.jpg';
 import {  getApiPosts } from '../redux/actions/actions';
 
 
 
 
 const mapStateToProp = (state) => {
-    return { apiPosts: state.apiPosts };
+    return { apiPosts: state.apiPosts.slice (0, 9) };
 }
 
 export class Api extends Component {
@@ -18,6 +18,8 @@ export class Api extends Component {
 
     componentDidMount = () =>{
         this.props.getApiPosts();
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
     render() {
@@ -26,12 +28,12 @@ export class Api extends Component {
           <header className="d-flex align-items-center align-content-center container-fluid bg-primary mb-4">
              <div><Button onClick={this.goBack} variant="primary"> &#8592; Go back</Button> </div>   <p className="ml-3 mb-0 text-white">Api Posts</p>
           </header>
-            <div className="container">
+            <div className="container mt-5">
         <div className="row">
             {this.props.apiPosts.length > 0 ? this.props.apiPosts.map( post => (
                     <div key={post.id} className="col-lg-4 mb-5">
                     <Card className="shadow border-0 h-100 ">
-                    <Card.Img variant="top" src={img3} />
+                    <Card.Img variant="top" src={img4} />
                     <Card.Body className="d-flex flex-column justify-content-between h-100">
             <Card.Title>{post.title}</Card.Title>
                         <Card.Text>

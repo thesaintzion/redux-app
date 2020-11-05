@@ -1,2 +1,8 @@
-export const ADD_POST = 'ADD_POST';
-export const GET_POSTS = 'GET_POSTS';
+export const
+ADD_POST = 'ADD_POST',
+GET_POSTS = 'GET_POSTS',
+API_REQUEST = 'API_REQUEST',
+API_ERROR = 'API_ERROR';
+// export const GET_POSTS = 'GET_POSTS';
+// export DATA_REQUESTED = 'DATA_REQUESTED';
+
