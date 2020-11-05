@@ -17,7 +17,6 @@ export class Api extends Component {
     }
 
     componentDidMount = () =>{
-        console.log('Api Posts', this.props.apiPosts.slice(0, 10))
         this.props.getApiPosts();
     }
 
@@ -34,7 +33,7 @@ export class Api extends Component {
                     <Card className="shadow border-0 h-100 ">
                     <Card.Img variant="top" src={img3} />
                     <Card.Body className="d-flex flex-column justify-content-between h-100">
-                        <Card.Title>{post.title}</Card.Title>
+            <Card.Title>{post.title}</Card.Title>
                         <Card.Text>
                         {post.body.length > 120 ? `${post.body.substr(0, 120)}... ` : post.body} 
                         

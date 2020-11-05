@@ -17,6 +17,7 @@
 # Connecting React and Redux
 
 * Provider from react-redux
+* Redux thunk
 
       
 

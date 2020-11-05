@@ -9,7 +9,7 @@ const mapStateToProp = (state) => {
 }
 
 class MorePage extends Component {
-    
+
     goBack = () => {
         window.history.back()
     }
@@ -24,16 +24,18 @@ class MorePage extends Component {
                 <div className="container">
                 <div className="row">
                     {this.props.posts.length > 0 ? this.props.posts.map( post => (
-                    <div key={post.id} className="col-lg-4">
-                    <Card className="shadow border-0">
+                    <div key={post.id} className="col-lg-4 mb-4">
+                    <Card className="shadow border-0 h-100">
                     <Card.Img variant="top" src={img3} />
-                    <Card.Body>
-                        <Card.Title>{post.title} {post.id}</Card.Title>
-                        <Card.Text>
-                        {post.description}
-                        </Card.Text>
-                        <Button variant="primary" className="w-100">Go somewhere</Button>
-                    </Card.Body>
+                    <Card.Body className="d-flex flex-column justify-content-between h-100">
+            <Card.Title>{post.title} {post.id}</Card.Title>
+              <Card.Text>
+           
+              {post.description.length > 120 ? `${post.description.substr(0, 120)}... ` : post.description} 
+              
+              </Card.Text>
+              <Button variant="primary" className="w-100">Go somewhere</Button>
+          </Card.Body>
                     </Card>
                     </div>
                     )) 

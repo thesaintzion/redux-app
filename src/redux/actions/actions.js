@@ -10,7 +10,6 @@ export function getApiPosts() {
     return fetch("https://jsonplaceholder.typicode.com/posts")
     .then(response => response.json())
     .then(json => {
-      console.log('Res', json);
       return dispatch({ type: GET_POSTS , payload: json });
     }).catch( err => {
       console.log('Error getting posts...', err);
