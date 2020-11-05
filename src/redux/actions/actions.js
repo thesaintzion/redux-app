@@ -1,4 +1,4 @@
-import { ADD_POST, GET_POSTS, API_REQUEST } from '../constants/action-types';
+import { ADD_POST, API_REQUEST, API_ERROR } from '../constants/action-types';
 
 
 export function addPost(payload) {
@@ -20,5 +20,9 @@ export function addPost(payload) {
 
 export function getApiPosts() {
     return { type: API_REQUEST}
+}
+
+export function apiError() {
+    return { type: API_ERROR}
 }
 

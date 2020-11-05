@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import img4 from '../assets/img/consult.jpg';
-import {  getApiPosts } from '../redux/actions/actions';
+import {  getApiPosts, apiError } from '../redux/actions/actions';
 
 
 
 
 const mapStateToProp = (state) => {
-    return { apiPosts: state.apiPosts.slice (0, 9) };
+    return { apiPosts: state.apiPosts.slice (0, 9), apiError: state.error };
 }
 
 export class Api extends Component {
@@ -20,6 +20,11 @@ export class Api extends Component {
         this.props.getApiPosts();
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    componentDidCatch = () => {
+        this.props.apiError();
+        console.log('Check error', this.props)
     }
 
     render() {
@@ -53,4 +58,4 @@ export class Api extends Component {
     }
 }
 
-export default connect(mapStateToProp, { getApiPosts })(Api);
+export default connect(mapStateToProp, { getApiPosts, apiError  })(Api);

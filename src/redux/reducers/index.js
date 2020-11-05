@@ -1,8 +1,9 @@
-import { ADD_POST, GET_POSTS } from '../constants/action-types'
+import { ADD_POST, GET_POSTS, API_ERROR } from '../constants/action-types'
 
 const initialState = {
     posts: [],
-    apiPosts: []
+    apiPosts: [],
+    error: ''
 }
 
  function rootReducer(state = initialState, action) {
@@ -16,6 +17,14 @@ const initialState = {
         return Object.assign({}, state, {
             apiPosts: state.apiPosts.concat(action.payload)
           });
+     }
+
+     if(action.type === API_ERROR){
+        return {
+            ...state,
+            error: action.payload
+
+        }
      }
     return state;
 }
