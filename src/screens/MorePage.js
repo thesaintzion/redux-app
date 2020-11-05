@@ -9,22 +9,18 @@ const mapStateToProp = (state) => {
 }
 
 class MorePage extends Component {
-
+    
     goBack = () => {
         window.history.back()
     }
-    render() {
 
-        console.log('The Props', this.props);
-      
+    render() {
         return (
           <>
           <header className="d-flex align-items-center align-content-center container-fluid bg-primary mb-4">
              <div><Button onClick={this.goBack} variant="primary"> &#8592; Go back</Button> </div>   <p className="ml-3 mb-0 text-white">All Posts</p>
           </header>
 
-
-    
                 <div className="container">
                 <div className="row">
                     {this.props.posts.length > 0 ? this.props.posts.map( post => (
@@ -43,11 +39,7 @@ class MorePage extends Component {
                     )) 
                     : <p className="text-center w-100 ">&#x26A0; No found</p>}
                 </div>
-              
-               
                 </div>
-          
-              
          </>
         )
     }

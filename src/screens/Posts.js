@@ -56,12 +56,11 @@ const SinglePost = (prop) => {
 
 
     render() {
-        console.log('The props', this.props)
         return (
             <>
             <div className="posts py-5 bg-dark">
                 <div className="container">
-                <h1 className="text-white text-center mb-4">POST</h1>
+                <h1 className="text-white text-center mb-4">POSTS</h1>
                 <div className="row">
                     <SinglePost posts={this.props.posts} />
                 </div>

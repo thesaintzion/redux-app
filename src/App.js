@@ -5,27 +5,29 @@ import Carosel from './screens/Carosel';
 import Posts from './screens/Posts';
 import {  Route, Switch } from 'react-router-dom';
 import MorePage from './screens/MorePage';
+import Menu from './screens/Menu';
+import Api from './screens/Api';
 
 class App extends  Component {
 
   render(){
     return (
       // <Router>
-       
-      <div>
+      <>
       <Switch>
       <Route exact path="/">
       <React.Fragment>
-        <Carosel/>
+          <Carosel/>
           <Posts/>
           <AddPost/>
-        </React.Fragment>
+          <Menu/>
+      </React.Fragment>
      </Route>
 
       <Route path="/more" component={MorePage} />
+      <Route path="/api-posts" component={ Api } />
       </Switch>
-      </div>
-      
+      </>
       // </Router>
       );
   }

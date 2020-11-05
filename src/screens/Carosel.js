@@ -6,9 +6,8 @@ import img2 from '../assets/img/bonus.jpg';
 import img3 from '../assets/img/financial2.jpg';
 
 class Carosel extends Component {
-
     render(){
-    
+
         return (
             <React.Fragment>
                 <div className="d-flex">

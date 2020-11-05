@@ -11,9 +11,7 @@ function mapDispatchToProp(dispatch){
 
 }
 
-class CAddPost extends Component {
-
-
+class AddPost extends Component {
   state = {
     title: '',
     description: '',
@@ -27,6 +25,7 @@ class CAddPost extends Component {
         alert('Please fil in description');
       }else{
         this.props.addPost({title : this.state.title,  description: this.state.description});
+        
         this.setState({
           title: '',
           description: ''
@@ -69,6 +68,6 @@ class CAddPost extends Component {
 
 
 
-const AddPost = connect(null, mapDispatchToProp)(CAddPost);
 
-export default AddPost;
+
+export default connect(null, mapDispatchToProp)(AddPost);
