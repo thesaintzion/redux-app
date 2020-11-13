@@ -6,7 +6,7 @@ export default function* watcherSaga() {
   yield takeEvery( API_REQUEST, workerSaga);
 }
 
-function* workerSaga(){
+function* workerSaga(action){
   try {
     const payload = yield call(getData, action.payload.url);
     yield put({ type: GET_POSTS, payload });
